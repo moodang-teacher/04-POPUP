@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업창 기본1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+      img {
+        vertical-align: top;
+      }
+      .wrap {
+        width: 60%;
+        margin: 50px auto;
+        background: #ff5;
+        font-size: 2rem;
+      }
+
+      .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 400px;
+        border: 10px solid #000;
+        background: #fff;
+        padding: 60px;
+
+        display: none;
+      }
+    </style>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        // 대상을 변수에 저장
+        const $popup = $('.popup');
+        const $btnClose = $('.btn-close');
+
+        $('.wrap a').on('click', (e) => {
+          e.preventDefault();
+
+          $popup.fadeIn();
+        });
+
+        // btnClose를 클릭하면 팝업창이 닫히게
+        $btnClose.on('click', () => {
+          $popup.fadeOut();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- .popup>p+button.btn-close -->
+    <div class="popup">
+      <p>팝업 내용이 뿌려집니다.</p>
+      <button class="btn-close" type="button">닫기</button>
+    </div>
+
+    <div class="wrap">
+      <p>
+        <a href="#">Lorem ipsum dolor sit,</a> amet consectetur adipisicing elit. Maiores amet sunt odit sapiente
+        voluptas dignissimos repudiandae itaque suscipit consequuntur a doloremque rerum maxime perferendis explicabo,
+        veritatis quam pariatur tenetur, est eligendi eveniet quasi blanditiis. Maiores, in perferendis officia iusto
+        esse dolore eligendi, aliquam laborum deserunt accusamus dolorum libero fugit ducimus voluptatum aliquid
+        adipisci ut laudantium repellat dolores! Odit at nemo accusantium, doloribus harum unde earum reprehenderit
+        consequatur assumenda modi officiis doloremque eum fugit nobis! Exercitationem facere, consectetur ullam,
+        ratione distinctio, perspiciatis cumque nemo cum inventore quae incidunt quos itaque tenetur. Eius sapiente
+        dolorum dolorem inventore est? Nemo inventore perferendis, quisquam facilis laborum consequatur exercitationem
+        cum, numquam quos pariatur error praesentium sed aspernatur sint at quasi maxime! Non rerum provident inventore
+        commodi vero vitae est ullam harum? Harum ipsam repudiandae eveniet architecto maxime aut consequatur, officiis
+        quidem repellendus voluptate est repellat consequuntur explicabo magnam eligendi similique soluta aperiam
+        dolorem? Distinctio neque ratione hic amet facilis dolorum, ducimus, nobis temporibus dolor assumenda, illo
+        expedita. Adipisci aut alias libero dignissimos unde, nesciunt dolore architecto mollitia excepturi assumenda
+        atque omnis! Aperiam nihil, cupiditate, nisi distinctio officia tempore sequi neque libero similique, sed
+        facilis accusantium tenetur aspernatur! Temporibus voluptates odio deleniti nostrum nobis, nemo soluta in, cum
+        earum quisquam voluptas? Suscipit blanditiis tenetur magni hic maxime culpa obcaecati debitis voluptatum
+        aspernatur! Obcaecati veniam voluptatem saepe laborum delectus voluptas soluta consequuntur vero nesciunt natus
+        dolorem, itaque harum illum temporibus quisquam doloremque doloribus! Praesentium molestias reiciendis sequi?
+        Necessitatibus modi impedit iste inventore molestias nam, voluptatem quibusdam repellendus dolores eius, odit,
+        quam asperiores nulla fuga aliquam libero quasi earum saepe reiciendis recusandae! Neque esse recusandae
+        voluptates delectus, laudantium id minima accusamus aperiam perferendis fugiat laboriosam, optio nesciunt at.
+        Velit numquam harum dignissimos voluptatem libero mollitia deleniti. Quisquam, vel porro. Sed beatae assumenda
+        fugit officia dolorem facere! Maxime atque repudiandae incidunt earum consequuntur eligendi accusantium deleniti
+        commodi cum, blanditiis quibusdam hic aut dicta sint harum placeat! Iste aliquid ipsam fuga recusandae, placeat
+        eveniet perspiciatis reprehenderit expedita! Repellendus inventore dolor earum facere pariatur doloribus in
+        magni veritatis iste voluptatum atque sint voluptatem dolore tenetur eveniet sapiente ut quam commodi animi,
+        nihil dolorem velit dolorum. Libero doloribus deleniti veritatis. Quisquam enim tempora quia dignissimos culpa,
+        dolor veniam beatae maxime harum aliquid, expedita minus ipsa repudiandae, ratione cum nesciunt possimus quo.
+        Possimus quo, exercitationem eveniet commodi soluta accusamus voluptate libero aspernatur doloremque. Enim
+        excepturi tenetur, eligendi animi deserunt veritatis incidunt soluta culpa quia fuga natus odio, officia
+        repudiandae, eum nostrum sed in similique nulla. Voluptatem tenetur quia voluptate porro quasi, repellat eius
+        nostrum? Libero impedit odit sunt. Facere quaerat assumenda ab illo dolor amet, modi, enim autem suscipit itaque
+        reiciendis fugiat quisquam. Sunt esse quos beatae voluptatem accusantium vitae porro perspiciatis! Sapiente,
+        numquam quibusdam tempore amet deleniti laborum perferendis nemo nulla ab illo laboriosam molestiae fuga ipsa
+        consequatur consectetur. Sint libero at perferendis tenetur harum impedit voluptatibus vitae doloremque. Facere,
+        libero accusamus. Explicabo nulla tempore unde adipisci laborum perspiciatis illo consectetur ratione esse,
+        aperiam sit ut odio enim consequuntur! Obcaecati, dignissimos? Dolorem!
+      </p>
+    </div>
+  </body>
+</html>
