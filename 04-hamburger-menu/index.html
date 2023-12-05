@@ -41,6 +41,30 @@
         width: 70%;
         height: 100%;
         background: #fff;
+        padding: 100px;
+      }
+
+      .menu > li > a {
+        border: 1px solid #000;
+        display: block;
+        padding: 20px 0;
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .menu > li.on > a {
+        color: #f39;
+      }
+
+      .menu > li + li {
+        margin-top: 10px;
+      }
+
+      .menu .submenu {
+        background: #f5f5f5;
+        padding: 20px;
+        display: none;
       }
 
       .btn-menu {
