@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        height: 70px;
+        line-height: 70px;
+        background: #f44;
+      }
+
+      main {
+        min-height: 500px;
+        padding: 50px 0;
+      }
+
+      .inner {
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+      }
+
+      footer {
+        height: 70px;
+        background: #444;
+        color: #999;
+      }
+
+      footer .inner {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a,
+      a:hover {
+        text-decoration: none;
+        font: inherit;
+      }
+
+      /* 전체메뉴 */
+      .all-menu {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 60px;
+        color: #fff;
+        transition: 0.35s;
+      }
+
+      .all-menu.active {
+        top: 0;
+      }
+
+      /* 햄버거 메뉴 */
+      .btn-menu {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: #000;
+        width: 50px;
+        height: 50px;
+      }
+      .btn-menu::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+        background: #fff;
+        transition: 0.35s;
+      }
+
+      .btn-menu b {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 2px;
+        background: #fff;
+        text-indent: -999px;
+        overflow: hidden;
+      }
+
+      .btn-menu::after {
+        content: '';
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+        background: #fff;
+        transition: 0.35s;
+      }
+
+      /* active 클래스가 생기면 */
+      .btn-menu.active b {
+        display: none;
+      }
+      .btn-menu.active::before {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      .btn-menu.active::after {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        bottom: auto;
+      }
+    </style>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        // 대상을 변수에 저장
+        const $allMenu = $('.all-menu');
+        const $btnMenu = $('.btn-menu');
+
+        // 햄버거 버튼을 클릭하면 그 자신에게 active 클래스 부여
+        $btnMenu.on('click', function () {
+          // $(this).toggleClass('active');
+          // $allMenu.toggleClass('active');
+
+          // add()
+          $(this).add($allMenu).toggleClass('active');
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- 전체메뉴 -->
+    <div class="all-menu">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium amet aliquid, error molestias minima
+      asperiores dolor inventore dolores quos neque quia non, debitis nisi nam! Porro placeat aliquid ratione maxime.
+    </div>
+
+    <header>
+      <div class="inner">
+        <h1>LOGO</h1>
+        <a href="#" class="btn-menu"><b>menu</b></a>
+      </div>
+    </header>
+    <main>
+      <div class="inner">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores recusandae, quos dolorem soluta
+          quis sit, repudiandae alias neque odit illo et culpa veniam qui ipsum quibusdam magnam assumenda quae suscipit
+          consectetur tempora accusantium. Aspernatur distinctio necessitatibus alias assumenda vitae doloremque
+          asperiores odit omnis officiis facere reprehenderit neque iure architecto facilis dolorem culpa maiores cum
+          eius tenetur optio nostrum cupiditate, magnam illum! Rem molestias labore aliquid eum? Culpa voluptas nostrum
+          accusamus ut cum distinctio velit iusto delectus? Eligendi enim praesentium exercitationem non, debitis
+          voluptatibus necessitatibus quae quasi accusamus aliquid facilis, esse quis eum labore molestiae corrupti,
+          magnam ipsa odit asperiores deserunt quam nemo. Possimus debitis doloremque ut perferendis, mollitia culpa
+          nihil dolor adipisci necessitatibus, totam similique. Laboriosam totam iste repellendus temporibus amet
+          aspernatur numquam pariatur necessitatibus alias veritatis repudiandae dolore deserunt quia quisquam quae
+          optio suscipit enim dolor facilis fugit, eum voluptatibus? Hic accusamus, repudiandae labore reprehenderit
+          repellendus unde tenetur repellat dicta obcaecati fuga nihil error eaque molestiae explicabo amet, assumenda
+          officiis, commodi numquam dolorem ab recusandae dolorum? Perferendis deserunt ab blanditiis ut impedit,
+          praesentium fuga perspiciatis eum dolores tempora minima. Ipsum debitis iste labore soluta inventore omnis ea
+          quisquam nemo dolorum totam accusamus iusto quia aut eveniet, facere in assumenda quae optio corporis sapiente
+          rem reiciendis sequi, repudiandae temporibus! Magni excepturi eveniet quia eos laboriosam. Voluptatum
+          blanditiis commodi nulla. Ad ipsum explicabo exercitationem earum est placeat architecto quis quidem autem,
+          omnis molestiae. Ex quas, neque tenetur sunt dicta totam similique expedita, molestias, aliquam enim est
+          architecto. Molestias excepturi minus tempore earum iure dolorem quidem blanditiis atque error. Quibusdam
+          aperiam non reprehenderit fugiat qui. Dolores rem autem, cupiditate, odio at nesciunt facere perferendis
+          officiis, maiores amet ex? Quibusdam voluptate nulla provident praesentium earum. Non saepe voluptatem
+          voluptates deserunt. Voluptate, aspernatur? Quia, nisi recusandae. Quaerat magnam ipsam voluptate soluta
+          blanditiis inventore, id eum rerum vero esse voluptas. Optio pariatur minima saepe nisi ex, dolore nesciunt
+          est animi doloremque dicta obcaecati aliquam aut fugit quas placeat quos ratione dolorem quasi corrupti ipsa
+          architecto nemo labore? Blanditiis laborum explicabo repellendus quos vitae nam sapiente est tenetur
+          praesentium quibusdam! Saepe quod esse vero temporibus culpa suscipit odit nemo atque est minima blanditiis
+          corporis commodi, optio reiciendis sequi delectus non dolores laudantium quis architecto voluptatem aliquid?
+          Inventore aliquam neque atque ducimus est ex quisquam quis nobis at, eaque ullam. Quidem rem provident officia
+          ipsa omnis quam cum? Recusandae in odit nisi eos asperiores dicta! Laborum voluptatibus, sapiente voluptate
+          distinctio labore consectetur ratione porro officiis sequi asperiores ullam quos dolores ducimus quidem, ipsa
+          et. Repellendus eius corrupti id reiciendis ipsum omnis inventore nulla dolorem non ut itaque tenetur,
+          asperiores saepe suscipit deserunt repellat soluta! Quaerat ipsam velit recusandae nemo quasi, ducimus sunt
+          dolore eligendi illum vitae. Rem molestias a vero vel accusantium laborum mollitia. Vero, totam. Nulla est
+          explicabo expedita molestias placeat, laboriosam, ad nobis molestiae culpa velit sunt itaque consequuntur in
+          voluptatum deleniti commodi? Molestias quos corporis temporibus vitae adipisci nobis, esse dicta ullam minima
+          consequuntur maxime accusamus voluptas earum ducimus labore deleniti quis perferendis?
+        </p>
+      </div>
+    </main>
+    <footer>
+      <div class="inner">&copy; moodang-teacher</div>
+    </footer>
+  </body>
+</html>
