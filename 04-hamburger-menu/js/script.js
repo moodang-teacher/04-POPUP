@@ -46,26 +46,21 @@ $(function () {
     isActive = false;
 
     // 서브메뉴 초기화
-    initSubmenu();
+    $submenu.stop().slideUp();
+    $menuList.removeClass('on');
   }
 
   // 서브메뉴 동작
   const $menuList = $('.menu > li');
   const $submenu = $('.submenu');
 
-  $menuList.on('dblclick', initSubmenu);
-
   $menuList.on('click', function (e) {
     e.preventDefault();
-    initSubmenu();
 
+    $(this).siblings().removeClass('on');
     $(this).toggleClass('on');
-    $(this).find($submenu).stop().slideToggle();
-  });
 
-  // 서브메뉴 초기화를 함수로 분리
-  function initSubmenu() {
-    $submenu.stop().slideUp();
-    $menuList.removeClass('on');
-  }
+    $(this).siblings().find($submenu).slideUp();
+    $(this).find($submenu).slideToggle();
+  });
 });
